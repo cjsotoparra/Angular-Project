@@ -18,5 +18,9 @@ ul{
 }
 
 mat-toolbar {
-	background-color: #8B0000;
+	background-color: #ab0520;
+}
+
+.myColor {
+	background-color: #0c234b;
 }
