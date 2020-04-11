@@ -24,3 +24,8 @@ mat-toolbar {
 .myColor {
 	background-color: #0c234b;
 }
+
+.myLogout {
+	background-color: #0c234b;
+	color: white;
+}
