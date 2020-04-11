@@ -17,10 +17,7 @@
                         <input matInput name="birthdate" ngModel placeholder="Birth Date" type="date" #birthdateInput="ngModel" required>
                         <mat-error *ngIf="birthdateInput.invalid">Please enter a valid birth date</mat-error>
                 </mat-form-field>
-                <button
-                        mat-raised-button
-                        color="primary"
-                        type="submit">Signup</button>
+                <button mat-raised-button color="primary" type="submit" *ngIf="!isLoading">Signup</button>
         </form>
 </mat-card>
 
