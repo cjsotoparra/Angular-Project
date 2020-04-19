@@ -8,7 +8,7 @@ const userRoutes = require("./routes/user");
 
 const app = express();
 
-mongoose.connect("mongodb+srv://cjsotoparra:Rachet54@cluster0-2u3y6.mongodb.net/node-angular?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }).then(() => {
+mongoose.connect("mongodb+srv://cjsotoparra:" + process.env.MONGO_ATLAS_PW + "@cluster0-2u3y6.mongodb.net/node-angular?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }).then(() => {
     console.log("Connected to database!");
   }).catch(() => {
     console.log("Connection failed!");
