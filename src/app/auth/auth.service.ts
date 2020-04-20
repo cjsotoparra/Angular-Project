@@ -37,7 +37,7 @@ export class AuthService{
 	createUser(email: string, password: string, username: string, birthdate: string){
 		const authData: AuthData = {email: email, password: password, username: username, birthdate: birthdate};
 		this.http
-			.post(BACKEND_URL + "/signup", authData)
+			.post(BACKEND_URL + "signup", authData)
 			.subscribe(() => {
 				this.router.navigate(["/"]);
 			}, error => {
@@ -47,7 +47,7 @@ export class AuthService{
 
 	login(email: string, password: string){
 		const authData: AuthData = {email: email, password: password, username: null, birthdate: null};
-		this.http.post<{token: string, expiresIn: number, userId: string }>(BACKEND_URL + "/login", authData).subscribe(response => {
+		this.http.post<{token: string, expiresIn: number, userId: string }>(BACKEND_URL + "login", authData).subscribe(response => {
 			const token = response.token;
 			this.token = token;
 			if(token){
