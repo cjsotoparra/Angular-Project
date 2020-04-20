@@ -8,6 +8,7 @@ const userRoutes = require("./routes/user");
 
 const app = express();
 
+console.log(process.env.MONGO_ATLAS_PW)
 mongoose.connect("mongodb+srv://cjsotoparra:" + process.env.MONGO_ATLAS_PW + "@cluster0-2u3y6.mongodb.net/node-angular?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }).then(() => {
     console.log("Connected to database!");
   }).catch(() => {
@@ -16,7 +17,7 @@ mongoose.connect("mongodb+srv://cjsotoparra:" + process.env.MONGO_ATLAS_PW + "@c
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/images", express.static(path.join("backend/images")));
+app.use("/images", express.static(path.join("images")));
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
